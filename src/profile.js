@@ -74,6 +74,27 @@ const Profile = () => {
           </ul>
         </div>
       </motion.section>
+
+      {/* Contact Section */}
+      <motion.section className="contact" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+        <h3>Let's Connect</h3>
+        <div className="social-links">
+          <a href="https://www.linkedin.com/in/akshay-shah-484a0549" target="_blank" rel="noopener noreferrer">
+            <FaLinkedin size={30} />
+          </a>
+          <a href="https://github.com/akshayshah18193" target="_blank" rel="noopener noreferrer">
+            <FaGithub size={30} />
+          </a>
+          <a href="mailto:akshayshah.1893@gmail.com">
+            <FaEnvelope size={30} />
+          </a>
+        </div>
+      </motion.section>
+
+      {/* Footer */}
+      <footer className="profile-footer">
+        <p>&copy; {new Date().getFullYear()} Akshay Shah. All rights reserved.</p>
+      </footer>
     </div>
   );
 };
