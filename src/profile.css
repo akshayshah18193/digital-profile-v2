@@ -135,3 +135,44 @@ body {
     color: #888;
   }
   
+  /* Parallax Background */
+.parallax-bg {
+    background: url("https://source.unsplash.com/random/1920x1080?technology") no-repeat center center fixed;
+    background-size: cover;
+  }
+  
+  /* Glow Effect for Name */
+  .glow-text {
+    text-shadow: 0px 0px 10px rgba(0, 123, 255, 0.8);
+  }
+  
+  /* Glassmorphism Effect */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Glow Hover Effect for Icons */
+  .glow-icon:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+    text-shadow: 0px 0px 10px rgba(0, 123, 255, 0.8);
+  }
+  .parallax-bg {
+    background: url("https://source.unsplash.com/random/1920x1080?technology") no-repeat center center fixed;
+    background-size: cover;
+  }
+  
+  .glassmorphic-card {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .glow-text {
+    text-shadow: 0px 0px 10px rgba(0, 123, 255, 0.8);
+  }
+  
