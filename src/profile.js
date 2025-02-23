@@ -1,101 +1,263 @@
 import React, { useState } from "react";
-import { FaLinkedin, FaGithub, FaEnvelope, FaMoon, FaSun, FaBriefcase, FaCode, FaCloud } from "react-icons/fa";
+import {
+  Container,
+  Typography,
+  Card,
+  CardContent,
+  Grid,
+  IconButton,
+  Divider,
+  Button,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  Avatar,
+  Tooltip,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
+  Paper,
+  Chip
+} from "@mui/material";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { 
+  FaLinkedin, FaGithub, FaEnvelope, 
+  FaCode, FaCloud, FaProjectDiagram, 
+  FaCertificate, FaDownload, FaLaptopCode, FaPython,
+  FaReact, FaNodeJs, FaDatabase, FaUserTie, FaAward, FaUniversity, 
+  FaJava,
+  FaGreaterThan
+} from "react-icons/fa";
+import { MdWbSunny, MdNightlight } from "react-icons/md";
 import { motion } from "framer-motion";
-import "./profile.css";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import "./Profile.css";
+
+// Light & Dark Theme
+const lightTheme = createTheme({
+  palette: {
+    mode: "light",
+    primary: { main: "#007bff" },
+    background: { default: "#f5f5f5" },
+  },
+});
+
+const darkTheme = createTheme({
+  palette: {
+    mode: "dark",
+    primary: { main: "#90caf9" },
+    background: { default: "#121212" },
+  },
+});
 
 const Profile = () => {
   const [darkMode, setDarkMode] = useState(false);
 
   return (
-    <div className={`profile-container ${darkMode ? "dark-mode" : ""}`}>
-      {/* Theme Toggle */}
-      <button className="theme-toggle" onClick={() => setDarkMode(!darkMode)}>
-        {darkMode ? <FaSun size={20} /> : <FaMoon size={20} />}
-      </button>
+    <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
+      <div className="parallax-bg">
+        <Container maxWidth="md" sx={{ py: 4 }}>
+          {/* Theme Toggle */}
+          <motion.div whileHover={{ scale: 1.1 }}>
+            <IconButton
+              sx={{ position: "absolute", top: 16, right: 16 }}
+              onClick={() => setDarkMode(!darkMode)}
+              color="primary"
+            >
+              {darkMode ? <MdWbSunny size={28} /> : <MdNightlight size={28} />}
+            </IconButton>
+          </motion.div>
 
-      {/* Header Section */}
-      <motion.header className="profile-header" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-        <h1>Akshay Shah</h1>
-        <h2>Software Engineer</h2>
-        <p className="tagline">Building Scalable & High-Performance Applications</p>
-      </motion.header>
+          {/* Hero Section */}
+          <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
+            <Paper elevation={3} className="glassmorphic-card">
+              <CardContent>
+                <Avatar alt="Akshay Shah" src="/profile-pic.jpg" sx={{ width: 100, height: 100, mx: "auto", my: 2 }} />
+                <Typography variant="h3" fontWeight="bold" color="primary" className="glow-text" align="center">
+                  Akshay Shah
+                </Typography>
+                <Typography variant="h6" color="gray" align="center">
+                 Senior Software Engineer | Full-Stack Developer | Solution Architect
+                </Typography>
+                
 
-      {/* About Section */}
-      <motion.section className="about" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-        <h3>About Me</h3>
-        <p>
-          Passionate software engineer specializing in **backend development, cloud computing, and scalable architecture**. 
-          Experienced in **Java, Python, and .NET**, focusing on performance, security, and seamless cloud integration.
-        </p>
-      </motion.section>
+          {/* Expanded Experience Section */}
+          <Typography variant="h5" fontWeight="bold" sx={{ mt: 4 }}>
+            Experience <FaUserTie />
+          </Typography>
+          <Divider sx={{ my: 2 }} />
+          <List>
+            <ListItem>
+              <ListItemIcon><FaUserTie /></ListItemIcon>
+              <ListItemText primary="Senior Software Engineer at Bosch (2022 - Present)" secondary="Working on PLM, CI/CD, and DevOps transformations." />
+            </ListItem>
+            <ListItem>
+              <ListItemIcon><FaUserTie /></ListItemIcon>
+              <ListItemText primary="Software Engineer at Cognizant (2021 - 2022)" secondary="Led microservices development and cloud integration." />
+            
+            </ListItem>
+            <ListItem>
+              <ListItemIcon><FaUserTie /></ListItemIcon>
 
-      {/* Skills Section */}
-      <motion.section className="skills" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-        <h3>Key Skills</h3>
-        <div className="skills-grid">
+             <ListItemText primary="Full Stack Engineer at Cognizant (2020 - 2021)" secondary="Led microservices development and cloud integration." />
+             </ListItem>
+             <ListItem>
+              <ListItemIcon><FaUserTie /></ListItemIcon>
+
+              <ListItemText primary="Programmer Analyst at Cognizant (2018 - 2020)" secondary="Led microservices development and cloud integration." />
+              </ListItem>
+              <ListItem>
+              <ListItemIcon><FaUserTie /></ListItemIcon>
+
+              <ListItemText primary="Programmer Analyst Trainee at Cognizant (2017 - 2018)" secondary="Led microservices development and cloud integration." />
+          </ListItem>
+          </List>
+
+          {/* Expanded Skills Section */}
+          <Typography variant="h5" fontWeight="bold" sx={{ mt: 4 }}>
+            Skills <FaCode /> <FaCloud />
+          </Typography>
+          <Divider sx={{ my: 2 }} />
+          <Grid container spacing={2}>
+            { [
+              
+              ["React.js", <FaReact />],
+              ["Node.js", <FaNodeJs />],
+              ["Python", <FaPython />],
+              ["Java", <FaJava />],
+              ["API",<FaCode/>],
+              ["CatenaX",<FaGreaterThan/>],
+              ["Databases", <FaDatabase />],
+              ["Cloud Computing", <FaCloud />],
+              ["CI/CD Pipelines", <FaLaptopCode />]
+            ].map(([skill, icon], index) => (
+              <Grid item key={index}>
+                <Chip icon={icon} label={skill} variant="outlined" />
+              </Grid>
+            ))}
+          </Grid>
+
+          {/* Certifications Section */}
+          <Typography variant="h5" fontWeight="bold" sx={{ mt: 4 }}>
+            Certifications <FaCertificate />
+          </Typography>
+          <Divider sx={{ my: 2 }} />
+          <List>
+            <ListItem>
+              <ListItemIcon><FaCertificate /></ListItemIcon>
+              <ListItemText primary="AWS Certified Cloud Practitioner" />
+            </ListItem>
+            <ListItem>
+              <ListItemIcon><FaCertificate /></ListItemIcon>
+              <ListItemText primary="Certified Kubernetes Administrator (CKA)" />
+            </ListItem>
+          </List>
+
+          {/* Projects Section */}
+          <Typography variant="h5" fontWeight="bold" sx={{ mt: 4 }}>
+            Projects <FaProjectDiagram /> <FaLaptopCode />
+          </Typography>
+          <Divider sx={{ my: 2 }} />
           {[
-            { skill: "Java", icon: <FaCode /> },
-            { skill: "Python", icon: <FaCode /> },
-            { skill: "C#", icon: <FaCode /> },
-            { skill: "Spring Boot", icon: <FaCode /> },
-            { skill: "AWS", icon: <FaCloud /> },
-            { skill: "Kubernetes", icon: <FaCloud /> },
-            { skill: "Terraform", icon: <FaCloud /> },
-            { skill: "CI/CD", icon: <FaCloud /> },
-            { skill: "Microservices", icon: <FaBriefcase /> },
-            { skill: "SQL", icon: <FaBriefcase /> }
-          ].map((item, index) => (
-            <motion.div key={index} className="skill-card" whileHover={{ scale: 1.1 }}>
-              {item.icon} {item.skill}
-            </motion.div>
+            ["PLM Experience Center", "Developed cloud-based PLM solutions improving lifecycle management."],
+            ["SnapSpect - AI Image Analysis", "Designed AI-based image recognition for manufacturing defects."]
+          ].map(([title, description], index) => (
+            <Accordion key={index}>
+              <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                <Typography variant="h6">{title}</Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Typography>{description}</Typography>
+              </AccordionDetails>
+            </Accordion>
           ))}
-        </div>
-      </motion.section>
 
-      {/* Work Experience Section */}
-      <motion.section className="experience" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-        <h3>Work Experience</h3>
+          {/* Education Section */}
+          <Typography variant="h5" fontWeight="bold" sx={{ mt: 4 }}>
+            Education <FaUniversity />
+          </Typography>
+          <Divider sx={{ my: 2 }} />
+          <List>
+            <ListItem>
+              <ListItemIcon><FaUniversity /></ListItemIcon>
+              <ListItemText primary="Master's in Computer Applications - MIT Pune (2017)" />
+            </ListItem>
+            <ListItem>
+              <ListItemIcon><FaUniversity /></ListItemIcon>
+              <ListItemText primary="Bachelor's in Computer Science - MIT Pune (2014)" />
+            </ListItem>
+          </List>
+         
+          {/* Awards & Achievements */}
+          <Typography variant="h5" fontWeight="bold" sx={{ mt: 4 }}>
+            Awards & Achievements <FaAward />
+          </Typography>
+          <Divider sx={{ my: 2 }} />
+          <List>
+            <ListItem>
+              <ListItemIcon><FaAward /></ListItemIcon>
+              <ListItemText primary="Client Focus Award (2020)" />
+            </ListItem>
+            <ListItem>
+              <ListItemIcon><FaAward /></ListItemIcon>
+              <ListItemText primary="Outstanding Performance in Software Development (2019)" />
+            </ListItem>
+          </List>
 
-        <div className="experience-card">
-          <h4>🚀 Bosch</h4>
-          <p className="job-duration"><em>Software Engineer | Oct 2022 – Present</em></p>
-          <ul>
-            <li>Developing scalable solutions with **cloud & DevOps** best practices.</li>
-            <li>Driving enterprise software innovation using **AI-powered tools**.</li>
-          </ul>
-        </div>
+          {/* Social Media Links */}
+          <Card className="glassmorphic-card" sx={{ mt: 4 }}>
+            <CardContent>
+              <Typography variant="h5" fontWeight="bold">
+                Connect with Me
+              </Typography>
+              <Divider sx={{ my: 2 }} />
+              <Grid container spacing={2} justifyContent="center">
+                <Grid item>
+                  <Tooltip title="LinkedIn">
+                    <IconButton color="primary" href="https://linkedin.com/in/yourprofile" target="_blank">
+                      <FaLinkedin size={28} />
+                    </IconButton>
+                  </Tooltip>
+                </Grid>
+                <Grid item>
+                  <Tooltip title="GitHub">
+                    <IconButton color="primary" href="https://github.com/yourprofile" target="_blank">
+                      <FaGithub size={28} />
+                    </IconButton>
+                  </Tooltip>
+                </Grid>
+                <Grid item>
+                  <Tooltip title="Email">
+                    <IconButton color="primary" href="mailto:your.email@example.com">
+                      <FaEnvelope size={28} />
+                    </IconButton>
+                  </Tooltip>
+                </Grid>
+              </Grid>
+            </CardContent>
+          </Card>
 
-        <div className="experience-card">
-          <h4>💼 Cognizant Technology Solutions</h4>
-          <p className="job-duration"><em>Software Engineer | Dec 2017 – Oct 2022</em></p>
-          <ul>
-            <li>Led migration from **.NET to Java microservices**.</li>
-            <li>Built **CI/CD automation tools**, improving development speed by 50%.</li>
-          </ul>
-        </div>
-      </motion.section>
+          {/* Example Paper Usage */}
+          <Paper elevation={3} sx={{ mt: 4, p: 2 }}>
+            <Typography variant="h6" fontWeight="bold">
+              Additional Information
+            </Typography>
+            <Typography>
+              This section can be used to provide any additional information or notes.
+            </Typography>
+          </Paper>
+          <Button variant="contained" color="primary" sx={{ mt: 3 }} startIcon={<FaDownload />} href="/resume.pdf" download>
+                  Download Resume
+                </Button>
+              </CardContent>
+            </Paper>
+          </motion.div>
+        </Container>
+      </div>
+    </ThemeProvider>
 
-      {/* Contact Section */}
-      <motion.section className="contact" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-        <h3>Let's Connect</h3>
-        <div className="social-links">
-          <a href="https://www.linkedin.com/in/akshay-shah-484a0549" target="_blank" rel="noopener noreferrer">
-            <FaLinkedin size={30} />
-          </a>
-          <a href="https://github.com/akshayshah18193" target="_blank" rel="noopener noreferrer">
-            <FaGithub size={30} />
-          </a>
-          <a href="mailto:akshayshah.1893@gmail.com">
-            <FaEnvelope size={30} />
-          </a>
-        </div>
-      </motion.section>
 
-      {/* Footer */}
-      <footer className="profile-footer">
-        <p>&copy; {new Date().getFullYear()} Akshay Shah. All rights reserved.</p>
-      </footer>
-    </div>
   );
 };
 
