@@ -32,7 +32,7 @@ import {
 import { MdWbSunny, MdNightlight } from "react-icons/md";
 import { motion } from "framer-motion";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import "./Profile.css";
+import "./profile.css";
 
 // Light & Dark Theme
 const lightTheme = createTheme({

@@ -6,20 +6,20 @@ body {
     transition: background-color 0.3s, color 0.3s;
     margin: 0;
     padding: 0;
-  }
-  
-  /* Dark Mode */
-  .dark-mode {
+}
+
+/* Dark Mode */
+.dark-mode {
     background-color: #121212;
     color: #ffffff;
-  }
-  
-  .dark-mode .profile-container {
+}
+
+.dark-mode .profile-container {
     background-color: #1e1e1e;
-  }
-  
-  /* Profile Container */
-  .profile-container {
+}
+
+/* Profile Container */
+.profile-container {
     max-width: 850px;
     margin: 40px auto;
     padding: 30px;
@@ -28,10 +28,10 @@ body {
     border-radius: 12px;
     text-align: center;
     transition: background 0.3s;
-  }
-  
-  /* Theme Toggle */
-  .theme-toggle {
+}
+
+/* Theme Toggle */
+.theme-toggle {
     position: absolute;
     top: 20px;
     right: 20px;
@@ -39,49 +39,49 @@ body {
     border: none;
     cursor: pointer;
     font-size: 1.5rem;
-  }
-  
-  /* Header Section */
-  .profile-header {
+}
+
+/* Header Section */
+.profile-header {
     background: linear-gradient(to right, #3498db, #2c3e50);
     color: white;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  .profile-header h1 {
+}
+
+.profile-header h1 {
     font-size: 2.8rem;
     margin-bottom: 5px;
-  }
-  
-  .profile-header h2 {
+}
+
+.profile-header h2 {
     font-size: 1.5rem;
     font-weight: 400;
-  }
-  
-  /* Sections */
-  section {
+}
+
+/* Sections */
+section {
     margin-bottom: 30px;
     padding-bottom: 10px;
     border-bottom: 2px solid #ddd;
-  }
-  
-  h3 {
+}
+
+h3 {
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 15px;
-  }
-  
-  /* Skill Badges */
-  .skills-grid {
+}
+
+/* Skill Badges */
+.skills-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 12px;
-  }
-  
-  .skill-card {
+}
+
+.skill-card {
     background: linear-gradient(to right, #3498db, #2980b9);
     color: white;
     padding: 10px 18px;
@@ -92,87 +92,78 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
-  }
-  
-  .skill-card:hover {
+}
+
+.skill-card:hover {
     transform: scale(1.1);
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Experience Cards */
-  .experience-card {
+}
+
+/* Experience Cards */
+.experience-card {
     background: #f9f9f9;
     padding: 20px;
     border-radius: 10px;
     text-align: left;
     transition: all 0.3s ease;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .experience-card:hover {
+}
+
+.experience-card:hover {
     transform: translateY(-5px);
-  }
-  
-  .dark-mode .experience-card {
+}
+
+.dark-mode .experience-card {
     background: #222;
-  }
-  
-  /* Social Links */
-  .social-links a {
+}
+
+/* Social Links */
+.social-links a {
     color: #3498db;
     margin: 10px;
     transition: transform 0.3s ease-in-out;
-  }
-  
-  .social-links a:hover {
+}
+
+.social-links a:hover {
     transform: scale(1.2);
-  }
-  
-  /* Footer */
-  .profile-footer {
+}
+
+/* Footer */
+.profile-footer {
     margin-top: 20px;
     font-size: 0.9rem;
     color: #888;
-  }
-  
-  /* Parallax Background */
+}
+
+/* Parallax Background */
 .parallax-bg {
     background: url("https://source.unsplash.com/random/1920x1080?technology") no-repeat center center fixed;
     background-size: cover;
-  }
-  
-  /* Glow Effect for Name */
-  .glow-text {
+}
+
+/* Glow Effect for Name */
+.glow-text {
     text-shadow: 0px 0px 10px rgba(0, 123, 255, 0.8);
-  }
-  
-  /* Glassmorphism Effect */
-  .glass-card {
+}
+
+/* Glassmorphism Effect */
+.glass-card {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Glow Hover Effect for Icons */
-  .glow-icon:hover {
+}
+
+/* Glow Hover Effect for Icons */
+.glow-icon:hover {
     transform: scale(1.1);
     transition: all 0.3s ease-in-out;
     text-shadow: 0px 0px 10px rgba(0, 123, 255, 0.8);
-  }
-  .parallax-bg {
-    background: url("https://source.unsplash.com/random/1920x1080?technology") no-repeat center center fixed;
-    background-size: cover;
-  }
-  
-  .glassmorphic-card {
+}
+
+.glassmorphic-card {
     backdrop-filter: blur(10px);
     background: rgba(255, 255, 255, 0.1);
     border-radius: 15px;
     padding: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  }
-  
-  .glow-text {
-    text-shadow: 0px 0px 10px rgba(0, 123, 255, 0.8);
-  }
-  
+}
